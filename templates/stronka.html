@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+
+    <title>My super Blog</title>
+
+    <link rel="stylesheet" type="text/css" href="blogstyle.css">
+    
+    
+  </head>
+
+  <body>
+    <h2>Welcome to my super blog:</h2>
+    <form method="post">
+        <label>
+        <div>Subject</div><input type="text" name="subject" class="input">
+    </label>
+     <label>
+        <div>Write Post</div>
+        <textarea name="content" class="textarea"></textarea>
+    </label>
+    <div class="error">{{error}}</div>
+
+    <input type="submit">
+    
+        <hr>
+    {%for post in posts %}
+    <div class="blog">
+        <div class="blogsubject">{{post.subject}}</div>
+        <pre class="blogcontent">{{post.content}}</pre>
+    </div>
+    {% endfor %}
+    <hr>
+    <div>Queried  {{UPDATE_TIME}} seconds ago<div>
+    
+    </form>
+  </body>
+
+</html>
